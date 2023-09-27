@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    padding: 0px;
+}
+#header {
+    display: flex;
+}
+.options{
+    background: red;
+    position: fixed;
+    top: 0;
+    height: 100px;
+    width: 100vw;
+}
+.content-area{
+    position: relative;
+}
+#header{
+    position: absolute;
+    top: 0px;
+}
+#header > b{
+    min-width: 100px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    padding: 10px 0; 
+    background-color: white;                                     
+}
+
+.row{
+    display: flex;
+}
+.row >b,.row>div{
+    min-width: 100px;
+    border: 1px solid lightgrey;
+    padding: 10px 0;
+}
+.row > b:first-child,#header > b:first-child{
+    text-align: center;
+    background-color: white;
+    position: sticky;
+    left: 0;
+}
+
