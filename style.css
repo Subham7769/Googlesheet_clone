@@ -1,46 +1,100 @@
-body{
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    padding: 0px;
-}
-#header {
-    display: flex;
-}
-.options{
-    background: red;
-    position: fixed;
-    top: 0;
-    height: 100px;
+* {
+    margin: 0;
+    padding: 0;
+  }
+  main{
     width: 100vw;
-}
-.content-area{
-    position: relative;
-}
-#header{
-    position: absolute;
-    top: 0px;
-}
-#header > b{
-    min-width: 100px;
-    text-align: center;
-    border: 1px solid lightgrey;
-    padding: 10px 0; 
-    background-color: white;                                     
-}
-
-.row{
+    margin: auto;
+    height: 100vh;
+    overflow: scroll;
+  }
+  #header {
     display: flex;
-}
-.row >b,.row>div{
-    min-width: 100px;
-    border: 1px solid lightgrey;
-    padding: 10px 0;
-}
-.row > b:first-child,#header > b:first-child{
-    text-align: center;
-    background-color: white;
+    position: sticky;
+    top: 0;
+    width: fit-content;
+    background-color: #fff;
+    z-index: 100;
+  }
+  #header > b {
     position: sticky;
     left: 0;
-}
+    top: 0;
+    background-color: white;
+    padding: 10px 0;
+    text-align: center;
+    min-width: 100px;
+    border: 1px solid #dfe4e9;
+  }
+/* *************************************Content Body Formation****************************/
+  #body {
+    width: fit-content;
+  }
+  .row {
+    display: flex;
+  }
+  .row > b,
+  .row > div {
+    padding: 10px 0;
+    min-width: 100px;
+    max-width: 100px;
+    border: 1px solid #dfe4e9;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .row > b:first-child {
+    text-align: center;
+    background-color: #fff;
+    position: sticky;
+    left: 0;
+  }
 
+  #options {
+    padding: 20px;
+    background-color: #25b331;
+  }
+  
+  #active-cell-display{
+    background-color: white;
+    padding: 2px 20px;
+    border-radius: 5px;
+  }
+  
+
+  /* ********************************************menu items******************************************** */
+  .menu-container{
+    display: flex;
+    justify-content: center;
+  }
+  .menus {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 80%;
+    border-radius: 25px;
+    align-items: center;
+    background-color: #ecf0f1;
+  }
+  
+  .active-option {
+    background-color: #d0d8e0;
+  }
+  
+  .menus > div {
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    border-radius: 5px;
+  }
+  .menus > div:hover{
+    background-color: #d0d8e0aa;
+  }
+  select{
+    background-color: #ecf0f1;
+    border: none;
+  }
+  /* select:hover{
+
+  } */

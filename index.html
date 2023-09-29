@@ -1,24 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Sheet Clone</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="options">
-        <span id="active-cell">null</span>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="options">
+      <div class="menu-container">
+        <div class="menus">
+          <div id="bold" onclick="onClickBold(this)">B</div>
+          <div id="italic" onclick="onClickItalic(this)">I</div>
+          <div id="underlined" onclick="onClickUnderline(this)">U</div>
+
+          <div
+            class="material-icons active-option text-alignment-button"
+            data-value="start"
+            onclick="onClickTextAlign(this)"
+          >
+            format_align_left
+          </div>
+          <div
+            class="material-icons text-alignment-button"
+            data-value="right"
+            onclick="onClickTextAlign(this)"
+          >
+            format_align_right
+          </div>
+          <div
+            class="material-icons text-alignment-button"
+            data-value="center"
+            onclick="onClickTextAlign(this)"
+          >
+            format_align_center
+          </div>
+
+          <div id="text-color">
+            <label for="color-picker"
+              ><span class="material-icons"> border_color </span></label
+            >
+            <input
+              onchange="onChangeTextColor(this)"
+              type="color"
+              id="color-picker"
+              style="width: 0; height: 0"
+            />
+          </div>
+
+          <div id="bg-color">
+            <label for="bgcolor-picker"
+              ><span class="material-icons"> format_color_fill </span></label
+            >
+            <input
+              onchange="onChangeBackgroundColor(this)"
+              type="color"
+              id="bgcolor-picker"
+              style="width: 0; height: 0"
+            />
+          </div>
+
+          <div id="font-size">
+            <select id="font-size-select" onchange="onChangeFontSize(this)">
+              <option value="12">12</option>
+              <option value="14">14</option>
+              <option value="16">16</option>
+              <option value="18">18</option>
+              <option value="20">20</option>
+              <option value="24">24</option>
+              <option value="28">28</option>
+              <option value="32">32</option>
+              <option value="36">36</option>
+              <option value="40">40</option>
+              <!-- Add more options with different font sizes as needed -->
+            </select>
+          </div>
+
+          <div id="font-family">
+            <select id="font-family-select" onchange="onChangeFontFamily(this)">
+              <option class="font-option" value="sans-serif" selected>
+                Sans-serif
+              </option>
+              <option class="font-option" value="serif">Serif</option>
+              <option class="font-option" value="monospace">Monospace</option>
+              <option class="font-option" value="cursive">Cursive</option>
+              <option class="font-option" value="fantasy">Fantasy</option>
+              <option class="font-option" value="Lucida Console">
+                Lucida Console
+              </option>
+              <option class="font-option" value="Tahoma">Tahoma</option>
+              <option class="font-option" value="Verdana">Verdana</option>
+              <option class="font-option" value="Impact">Impact</option>
+              <option class="font-option" value="Trebuchet MS">
+                Trebuchet MS
+              </option>
+              <option class="font-option" value="Palatino">Palatino</option>
+              <option class="font-option" value="Garamond">Garamond</option>
+              <option class="font-option" value="Comic Sans MS">
+                Comic Sans MS
+              </option>
+              <option class="font-option" value="Brush Script MT">
+                Brush Script MT
+              </option>
+              <!-- Add more options with different font families as needed -->
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <span id="active-cell-display">null</span>
     </div>
-    <div class="content-area">
-        <div id="header"></div>
-        <section id="gridBody">      
-            <!-- <div class="row">                <div>1</div>
-                    <div>empty</div>
-                    <div>empty</div>
-                </div> -->
-        </section>
-    </div>
-    <script src="script.js"></script>
-</body>
+
+    <main>
+      <!-- mainsheet starts here -->
+      <div id="header"></div>
+      <section id="body"></section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
